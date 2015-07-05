@@ -203,7 +203,11 @@ void react(int con){
 }
 
 int main(int argc, char const *argv[]){
-	int con = start();
+	string ip = "localhost";
+	int port = 3720;
+	if(argc > 1) ip = argv[1];
+	if(argc > 2) port = atol(argv[2]); 
+	int con = start(ip, port);
 	srand (time(NULL));
 	react(con);
 	cout << "done!!!!!" << endl;

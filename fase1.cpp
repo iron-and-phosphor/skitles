@@ -44,8 +44,8 @@ struct Moves{
 };
 
 
-int start(){
-	int con = connect("localhost",3720);
+int start(string ip, int port){
+	int con = connect(ip,port);
 	sendln(con,"RED");
 	if(receiveln(con)=="INVALID COLOR") exit(0);
 	sendln(con,"M653262226 4288924BB5 727165B452 73334BFBB3");
